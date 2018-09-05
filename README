@@ -1,0 +1,6 @@
+SC3: SubCluster Command and Control command line tool suite
+
+The SubCluster Command and Control (SC3) tool suite
+offers a command line interface for system and user administration
+tasks subclusters. It replies on the C3 toolkit's existence and
+extends its scope to heterogeneous setups.
