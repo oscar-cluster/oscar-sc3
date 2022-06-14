@@ -9,8 +9,6 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
-PATCHES=$(sort $(shell find $(CURDIR)/debian/patches -name "*.patch"))
-
 
 CFLAGS = -Wall -g
 
@@ -24,11 +22,6 @@ configure: configure-stamp
 configure-stamp:
 	dh_testdir
 	# Add here commands to configure the package.
-	@echo "Appying patches for the creation of the Debian package..."
-	@cd $(CURDIR) && \
-	$(foreach patch, $(PATCHES), \
-		echo -n Applying `basename $(patch)`... && cat $(patch) | \
-		patch -p0 < $(patch) && echo done. &&) /bin/true
 	touch configure-stamp
 
 
